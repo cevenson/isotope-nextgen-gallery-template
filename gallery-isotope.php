@@ -17,6 +17,17 @@ Follow variables are useable :
 
 <style type="text/css">
 
+/**** centre nav and put at bottom ****/
+.ngg-navigation{
+	position: absolute;
+	bottom: 3px;
+	left: 20%;
+	right: 20%;
+}
+
+#isotopegallery{
+	padding-bottom: 40px;
+}
 
 /**** Isotope Filtering ****/
 
@@ -165,13 +176,13 @@ background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%
         <?php foreach ( $images as $image ) : ?>
                
                
-                <?php
+                <?php if ( !$image->hidden ) {
                         //GET the Size parameters for each image. this i used to size the div box that the images goes inside of.
                         $the_size_string = $image->size;
                         $thewidth = get_string_between($the_size_string, "width=\"", "\"");
                         $theheight = get_string_between($the_size_string, "height=\"", "\"");
                         $divstyle = 'width:'.$thewidth.'px; height:'.$theheight.'px;'; 
-                ?>
+                }?>
                
  
                         <?php
